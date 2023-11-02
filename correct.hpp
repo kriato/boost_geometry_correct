@@ -118,7 +118,9 @@ static inline void dissolve_find_intersections(
 	}
 
 	// Detect intersections and generate pseudo-vertices
-	boost::geometry::strategies::cartesian<> strategy;
+  // Too lazy to check which boost version has this API so I just leave a comment
+	// boost::geometry::strategies::cartesian<> strategy;
+  boost::geometry::strategy::intersection::cartesian_segments<> strategy;
     typedef boost::geometry::detail::no_rescale_policy rescale_policy_type;
     typedef boost::geometry::detail::overlay::turn_info
         <
